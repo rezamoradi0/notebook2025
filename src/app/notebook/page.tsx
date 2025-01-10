@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation'
 import { useSignal, initData, type User } from '@telegram-apps/sdk-react';
 import { List, Placeholder } from "@telegram-apps/telegram-ui"
 
@@ -9,6 +10,7 @@ import {
   type DisplayDataRow,
 } from '@/components/DisplayData/DisplayData';
 import { Page } from '@/components/Page';
+
 
 function getUserRows(user: User): DisplayDataRow[] {
   return [
@@ -27,7 +29,11 @@ function getUserRows(user: User): DisplayDataRow[] {
 
 export default function InitDataPage() {
   const [firstTime, setFirstTime] = useState<boolean>(() => localStorage.getItem("firstTime")?.length ? true : false);
+  const router = useRouter();
 
+  useEffect(()=>{
+    router.push('/init-data');
+  },[firstTime])
 
   const initDataRaw = useSignal(initData.raw);
   const initDataState = useSignal(initData.state);
@@ -113,8 +119,14 @@ export default function InitDataPage() {
   }
   return (
     <Page>
-      {firstTime ? "FitstTime" : "notFirstTime"}
-      <button onClick={() => localStorage.setItem("firstTime", "false")}></button>
-    </Page>
+      <div className='w-full h-1/2'>
+
+      </div>
+      <div>
+      
+        <button onClick={() => localStorage.setItem("firstTime", "false")}> Start Now</button>
+
+      </div>
+     </Page>
   );
 };
