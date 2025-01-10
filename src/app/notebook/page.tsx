@@ -132,6 +132,8 @@ export default function InitDataPage() {
             width={0}
             height={0}
             sizes="100vw"
+            style={{ width: '100%', height: 'auto' }} 
+
             className="rounded-lg shadow-lg object-cover w-full aspect-video"
             priority
           />
