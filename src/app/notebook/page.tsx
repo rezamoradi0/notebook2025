@@ -120,29 +120,25 @@ export default function InitDataPage() {
   }
   return (
     <Page>
-
-
-
-
       <div className="container mx-auto px-4 py-8 h-1/2">
         <div className="relative w-full max-w-md mx-auto">
           <Image
-          alt='notebook'
+            alt='notebook'
             src="/images/note.jpg"
             width={0}
             height={0}
             sizes="100vw"
-            style={{ width: '100%', height: 'auto' }} 
-
+            style={{ width: '100%', height: 'auto' }}
             className="rounded-lg shadow-lg object-cover w-full aspect-video"
             priority
           />
         </div>
 
       </div>
-      <div className='h-1/2'>
-
-        <button onClick={getToNotes}> Start Now</button>
+      <div className='h-1/2 flex justify-evenly  items-start bg-[#5744a8]'>
+        <h1 className='text-gray-50'>The Next Dimension Of Notebooks</h1>
+        <p className='text-gray-100 text-xs'>Get Your everyDay thoughts . manage your work in one place</p>
+        <button className='rounded-full p-2  text-center' onClick={getToNotes}> ○ Start Now ○</button>
 
       </div>
     </Page >
