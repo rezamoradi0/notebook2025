@@ -10,6 +10,7 @@ import {
   type DisplayDataRow,
 } from '@/components/DisplayData/DisplayData';
 import { Page } from '@/components/Page';
+import Image from 'next/image';
 
 
 function getUserRows(user: User): DisplayDataRow[] {
@@ -119,8 +120,22 @@ export default function InitDataPage() {
   }
   return (
     <Page>
+  
+    
+   
       <div className='w-full h-1/2'>
-
+        <div className="container mx-auto px-4 py-8">
+          <div className="relative w-full max-w-md mx-auto">
+            <Image
+              src="/images/note.jpg"
+              alt="Description of the image"
+              width={400}
+              height={400}
+              className="rounded-lg shadow-lg object-cover"
+              priority
+            />
+          </div>
+        </div>
       </div>
       <div>
 
