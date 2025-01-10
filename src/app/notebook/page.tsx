@@ -31,9 +31,10 @@ export default function InitDataPage() {
   const [firstTime, setFirstTime] = useState<boolean>(() => localStorage.getItem("firstTime")?.length ? true : false);
   const router = useRouter();
 
-  useEffect(()=>{
+  useEffect(() => {
+
     router.push('/init-data');
-  },[firstTime])
+  }, [firstTime])
 
   const initDataRaw = useSignal(initData.raw);
   const initDataState = useSignal(initData.state);
@@ -123,10 +124,10 @@ export default function InitDataPage() {
 
       </div>
       <div>
-      
-        <button onClick={() => localStorage.setItem("firstTime", "false")}> Start Now</button>
+
+        <button onClick={() => { localStorage.setItem("firstTime", "false"); setFirstTime(false) }}> Start Now</button>
 
       </div>
-     </Page>
+    </Page >
   );
 };
