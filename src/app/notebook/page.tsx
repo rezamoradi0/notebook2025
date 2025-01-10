@@ -131,7 +131,7 @@ export default function InitDataPage() {
               alt="Description of the image"
               width={400}
               height={400}
-              className="rounded-lg shadow-lg object-cover w-full h-auto"
+              className="rounded-lg shadow-lg object-cover w-full aspect-video"
               priority
             />
           </div>
